@@ -23,11 +23,13 @@ function Set_Text_Size(){
     DOM_Text.style.fontSize = "100%";
     var List_TableText2 = document.getElementsByClassName("tabletext2")
     for (var Test in List_TableText2) {
-        // console.log(Test);
-        if (typeof(Test.style) == "object") {
-            Test.style.fontsize = "90%";
-            }
+        console.log(Test);
+        console.log(typeof(Test.style) == "object")
+        if (typeof(List_TableText2[Test].style) == "object") {
+            console.log("changing");
+            List_TableText2[Test].style.fontSize = "90%";
         }
+    }
 };
 
 
