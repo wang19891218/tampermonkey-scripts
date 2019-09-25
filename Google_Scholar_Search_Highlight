@@ -1,0 +1,31 @@
+// ==UserScript==
+// @name         Google Scholar Highlight
+// @namespace    http://waecoco.com
+// @version      0.1
+// @description  Save some time
+// @author       coco
+// @match        https://scholar.google.com/*
+// @grant        none
+// ==/UserScript==
+
+var List_Class = document.getElementsByClassName("gs_fl");
+var Str_search_Text = "Cited";
+var List_Found = [];
+var List_a_Tag = [];
+var Str_Citation_Number;
+var Value_Citation_Number;
+var Int_Threshold_Value = 100
+
+for (var i_Class = 0; i_Class < List_Class.length; i_Class++){
+    List_a_Tag = List_Class[i_Class].getElementsByTagName("a");
+    for (var i_a_Tag = 0; i_a_Tag < List_a_Tag.length; i_a_Tag++){
+        if (List_a_Tag[i_a_Tag].textContent.indexOf(Str_search_Text) == 0){
+            Str_Citation_Number = List_a_Tag[i_a_Tag].textContent
+            Value_Citation_Number = parseInt(Str_Citation_Number.substring(9, Str_Citation_Number.length))
+            if (Value_Citation_Number >= Int_Threshold_Value){
+                console.log(i_Class, i_a_Tag)
+                List_a_Tag[2].style.backgroundColor = 'rgba(255, 0, 0, 0.2)';
+            }
+        }
+    }
+}
