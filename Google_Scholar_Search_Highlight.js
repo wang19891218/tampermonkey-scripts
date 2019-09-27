@@ -45,6 +45,7 @@ function Function_Highlight_Year() {
         if (Int_Year >= Int_Threshold_Year) {
             Div_gs_a.innerHTML = Div_gs_a.innerHTML.replace(Str_Year,'<b style=\"background-color:powderblue;display: inline-block;\">' + Str_Year + '</b>');
         } else {
+            Div_gs_a.innerHTML = Div_gs_a.innerHTML.replace("background-color:powderblue",'background-color:');
         }
         console.log(Str_Year)
     }
