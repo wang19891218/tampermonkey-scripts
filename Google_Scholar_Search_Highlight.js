@@ -63,6 +63,7 @@ var Value_Citation_Number;
 var div_Control = document.createElement("div");
 var var_v_coord = 180
 var var_h_coord = window.innerWidth - 220
+div_Control.style.position = "fixed";
 div_Control.style.left = var_h_coord+"px"
 div_Control.style.position = "absolute"
 div_Control.style.top = var_v_coord+"px"
@@ -134,7 +135,7 @@ div_Control.appendChild(div_Input_Cite)
 div_Control.appendChild(div_Input_Year_Title)
 div_Control.appendChild(div_Input_Year)
 
-document.getElementById("gs_top").appendChild(div_Control)
+document.getElementsByTagName("body")[0].appendChild(div_Control)
 
 
 Function_High_Light()
