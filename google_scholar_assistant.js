@@ -140,3 +140,13 @@ document.getElementsByTagName("body")[0].appendChild(div_Control)
 
 Function_High_Light()
 Function_Highlight_Year()
+
+
+
+// Element property hidden
+// height: 0px;
+// visibility: hidden;
+// border: 0px;
+// padding: {'padding-top':0px;};
+// padding-top: 0px;
+// padding-bottom: 0px;
