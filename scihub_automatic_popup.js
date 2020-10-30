@@ -20,7 +20,7 @@ function addSciHubElement () {
   newDiv.style.width = "400px"
   newDiv.style.height = "600px"
   newDiv.style.position = "absolute";
-  newDiv.style.bottom = '2px'
+  newDiv.style.bottom = (window.innerHeight - 2).toString + 'px'
   newDiv.style.right = '2px'
   // newIframe.style
   newIframe.style.width= '100%'
