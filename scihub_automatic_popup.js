@@ -8,6 +8,19 @@
 // @grant        none
 // ==/UserScript==
 
+// Immediately-invoked function expression
+(function() {
+    // Load the script
+    var script = document.createElement("SCRIPT");
+    script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js';
+    script.type = 'text/javascript';
+    script.onload = function() {
+        var $ = window.jQuery;
+        // Use $ here...
+    };
+    document.getElementsByTagName("head")[0].appendChild(script);
+})();
+
 function addSciHubElement () {
   // create a new div element
   const newDiv = document.createElement("div");
