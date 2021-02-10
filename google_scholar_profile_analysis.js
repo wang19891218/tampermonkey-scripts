@@ -27,10 +27,7 @@ function get_unique_and_sort(array_for_counting) {
     return array_authors
 }
 
-
-(function() {
-    'use strict';
-
+function get_coauthors_rate(){
     var list_divs = document.getElementsByClassName('gsc_a_tr');
     var i_paper;
     var array_authors = [];
@@ -42,7 +39,33 @@ function get_unique_and_sort(array_for_counting) {
     array_authors = get_unique_and_sort(array_authors)
     var i_author;
     for (i_author = 0; i_author < array_authors.length; i_author++){
-        console.log(array_authors[i_author]);
+        console.log(array_authors[i_author].name, array_authors[i_author].count);
     }
     // sort_count(get_unique(array_authors))
+}
+
+// window.addEventListener('load', function () {
+//    console.clear();
+//    get_coauthors_rae();})
+//  document.addEventListener("DOMContentLoaded", get_coauthors_rate);
+
+// document.addEventListener("DOMContentLoaded", function () {
+//    console.clear();
+//    get_coauthors_rate();
+// })
+
+
+(function() {
+    'use strict';
+
+    get_coauthors_rate();
+
+    // document.onload = function() {
+    var button_more_object = document.getElementById('gsc_bpf_more');
+
+    button_more_object.addEventListener('click', function() {
+        console.clear();
+        setTimeout(() => { get_coauthors_rate();; }, 600);
+    })
+
 })();
