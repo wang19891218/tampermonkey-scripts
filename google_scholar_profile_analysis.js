@@ -35,37 +35,57 @@ function get_coauthors_rate(){
         var temp_array_author = list_divs[i_paper].children[0].getElementsByClassName('gs_gray')[0].textContent.split(", ");
         array_authors = array_authors.concat(temp_array_author);
     };
-    // console.log(array_authors);
     array_authors = get_unique_and_sort(array_authors)
     var i_author;
     for (i_author = 0; i_author < array_authors.length; i_author++){
         console.log(array_authors[i_author].name, array_authors[i_author].count);
     }
-    // sort_count(get_unique(array_authors))
 }
 
-// window.addEventListener('load', function () {
-//    console.clear();
-//    get_coauthors_rae();})
-//  document.addEventListener("DOMContentLoaded", get_coauthors_rate);
-
-// document.addEventListener("DOMContentLoaded", function () {
-//    console.clear();
-//    get_coauthors_rate();
-// })
-
+function get_word_rate(){
+    var list_divs = document.getElementsByClassName('gsc_a_tr');
+    var array_words = [];
+    var i_paper;
+    for (i_paper = 0; i_paper < list_divs.length; i_paper++) {
+        var string_title = list_divs[i_paper].children[0].children[0].textContent;
+        string_title = string_title.toLowerCase();
+        string_title = string_title.replace(':', ' ');
+        string_title = string_title.replace('-', ' ');
+        string_title = string_title.replace('a ', '');
+        string_title = string_title.replace('and ', '');
+        string_title = string_title.replace('based ', '');
+        string_title = string_title.replace('for ', '');
+        string_title = string_title.replace('in ', '');
+        string_title = string_title.replace('of ', '');
+        string_title = string_title.replace('on ', '');
+        string_title = string_title.replace('using ', '');
+        string_title = string_title.replace('the ', '');
+        var temp_array_word = string_title.split(" ");
+        array_words = array_words.concat(temp_array_word);
+    };
+    array_words = get_unique_and_sort(array_words)
+    var i_word;
+    for (i_word = 0; i_word < array_words.length; i_word++){
+        if (array_words[i_word].count > 1) {
+            console.log(array_words[i_word].name, array_words[i_word].count);
+        }
+    }
+}
 
 (function() {
     'use strict';
 
     get_coauthors_rate();
 
+    get_word_rate();
+
     // document.onload = function() {
     var button_more_object = document.getElementById('gsc_bpf_more');
 
     button_more_object.addEventListener('click', function() {
         console.clear();
-        setTimeout(() => { get_coauthors_rate();; }, 600);
+        setTimeout(() => { get_coauthors_rate();}, 400);
+        setTimeout(() => { get_word_rate(); }, 500);
     })
 
 })();
