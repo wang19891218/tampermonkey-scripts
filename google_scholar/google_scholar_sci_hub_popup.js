@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Google Scholar sci-hub assistant
+// @name         Google scholar sci-hub popup 
 // @namespace    wang19891218
-// @version      0.1
+// @version      0.2
 // @description  Save some time with sci-hub
 // @author       coco
 // @include      https://www.sciencedirect.com/*
