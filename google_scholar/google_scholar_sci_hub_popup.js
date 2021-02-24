@@ -5,6 +5,9 @@
 // @description  Save some time with sci-hub
 // @author       coco
 // @include      https://www.sciencedirect.com/*
+// @include      https://www.tandfonline.com/doi/abs/*
+// @include      https://ascelibrary.org/doi/pdf*
+// @include      https://aip.scitation.org/doi/abs/*
 // @grant        none
 // ==/UserScript==
 
