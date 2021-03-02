@@ -4,10 +4,16 @@
 // @version      0.41
 // @description  Save some time with sci-hub
 // @author       coco
-// @include      https://www.sciencedirect.com/*
-// @include      https://www.tandfonline.com/doi/abs/*
 // @include      https://ascelibrary.org/doi/pdf*
 // @include      https://aip.scitation.org/doi/abs/*
+// @include      https://journals.aps.org/pre/abstract/*
+// @include      https://journals.sagepub.com/doi/abs/*
+// @include      https://link.springer.com/article/*
+// @include      https://onlinelibrary.wiley.com/doi/epdf/*
+// @include      https://www.sciencedirect.com/*
+// @include      https://www.tandfonline.com/doi/abs/*
+
+
 // @grant        none
 // ==/UserScript==
 
