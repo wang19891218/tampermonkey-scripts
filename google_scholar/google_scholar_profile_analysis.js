@@ -19,15 +19,15 @@ function get_unique_and_sort(array_for_counting) {
     var array_authors = []
     var array_keys = Object.keys(counts)
     for (var i_author = 0; i_author < array_keys.length; i_author++) {
-        array_authors.push({'name':array_keys[i_author], 'count': counts[array_keys[i_author]]})
+        array_authors.push({ 'name': array_keys[i_author], 'count': counts[array_keys[i_author]] })
     }
 
     // Sort
-    array_authors.sort(function(a, b) {return - a.count + b.count});
+    array_authors.sort(function(a, b) { return -a.count + b.count });
     return array_authors
 }
 
-function get_coauthors_rate(){
+function get_coauthors_rate() {
     var list_divs = document.getElementsByClassName('gsc_a_tr');
     var i_paper;
     var array_authors = [];
@@ -37,12 +37,30 @@ function get_coauthors_rate(){
     };
     array_authors = get_unique_and_sort(array_authors)
     var i_author;
-    for (i_author = 0; i_author < array_authors.length; i_author++){
-        console.log(array_authors[i_author].name, array_authors[i_author].count);
+    var temp_output = "";
+    for (i_author = 0; i_author < array_authors.length; i_author++) {
+        temp_output = temp_output.concat(array_authors[i_author].name);
+        temp_output = temp_output.concat(": ");
+        temp_output = temp_output.concat(array_authors[i_author].count.toString());
+        temp_output = temp_output.concat("; ");
+        // console.log(array_authors[i_author].name, array_authors[i_author].count);
     }
+
+    //for (i_word = 0; i_word < array_words.length; i_word++){
+    //    if (array_words[i_word].count > 1) {
+    //        // process.stdout.write(array_words[i_word].name, array_words[i_word].count);
+    //       temp_output = temp_output.concat(array_words[i_word].name);
+    //        temp_output = temp_output.concat(": ");
+    //        temp_output = temp_output.concat(array_words[i_word].count.toString());
+    //        temp_output = temp_output.concat(" ;");
+    //        //console.log(array_words[i_word].name, array_words[i_word].count);
+    //    }
+    // }
+    console.log("Name count")
+    console.log(temp_output);
 }
 
-function get_word_rate(){
+function get_word_rate() {
     var list_divs = document.getElementsByClassName('gsc_a_tr');
     var array_words = [];
     var i_paper;
@@ -65,26 +83,35 @@ function get_word_rate(){
     };
     array_words = get_unique_and_sort(array_words)
     var i_word;
-    for (i_word = 0; i_word < array_words.length; i_word++){
+    var temp_output = "";
+    for (i_word = 0; i_word < array_words.length; i_word++) {
         if (array_words[i_word].count > 1) {
-            console.log(array_words[i_word].name, array_words[i_word].count);
+            // process.stdout.write(array_words[i_word].name, array_words[i_word].count);
+            temp_output = temp_output.concat(array_words[i_word].name);
+            temp_output = temp_output.concat(": ");
+            temp_output = temp_output.concat(array_words[i_word].count.toString());
+            temp_output = temp_output.concat("; ");
+            //console.log(array_words[i_word].name, array_words[i_word].count);
         }
     }
+    console.log("keyword count")
+    console.log(temp_output);
 }
 
 (function() {
     'use strict';
+    // Print author name count
 
     get_coauthors_rate();
+    // Pring word count
 
     get_word_rate();
-
     // document.onload = function() {
     var button_more_object = document.getElementById('gsc_bpf_more');
 
     button_more_object.addEventListener('click', function() {
         console.clear();
-        setTimeout(() => { get_coauthors_rate();}, 400);
+        setTimeout(() => { get_coauthors_rate(); }, 400);
         setTimeout(() => { get_word_rate(); }, 500);
     })
 
