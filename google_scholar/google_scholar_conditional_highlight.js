@@ -72,7 +72,7 @@ div_Control.style.height = "100px";
 div_Control.style.background = "gray";
 div_Control.style.color = "white";
 div_Control.id = "id_coco_scholar_control"
-// div_Control.innerHTML = "Control";
+// div_Control.innerHTML = "Control"; Test
  
 var decodedCookie = decodeURIComponent(document.cookie);
  
