@@ -9,6 +9,7 @@
 // @include      https://journals.aps.org/pre/abstract/*
 // @include      https://journals.sagepub.com/doi/abs/*
 // @include      https://link.springer.com/article/*
+// @include      https://link.springer.com/chapter/*
 // @include      https://onlinelibrary.wiley.com/doi/epdf/*
 // @include      https://www.sciencedirect.com/*
 // @include      https://www.tandfonline.com/doi/abs/*
