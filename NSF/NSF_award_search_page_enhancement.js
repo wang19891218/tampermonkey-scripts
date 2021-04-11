@@ -1,24 +1,24 @@
 // ==UserScript==
-// @name         NSF award search enhancement
+// @name         NSF award display enhancement
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  try to take over the world!
-// @author       You
-// @match      https://www.nsf.gov/awardsearch*
+// @description  NSF award display enhancement: larger font
+// @author       wang19891218 
+// @match        https://www.nsf.gov/awardsearch/showAward*
 // @grant        none
 // ==/UserScript==
 
-function Set_Page_Width(){
-   'use strict';
+function Set_Page_Width() {
+    'use strict';
     var List_Table = document.getElementsByTagName("table")
     var DOM_Table = List_Table[0]
     DOM_Table.width = 900
-    // DOM_Table.style.width = 9000
+        // DOM_Table.style.width = 9000
 };
 
 
-function Set_Text_Size(){
-   'use strict';
+function Set_Text_Size() {
+    'use strict';
     var DOM_Text = document.getElementsByClassName("text")[0]
     DOM_Text.style.fontSize = "100%";
     var List_TableText2 = document.getElementsByClassName("tabletext2")
@@ -35,4 +35,3 @@ function Set_Text_Size(){
 
 Set_Page_Width();
 Set_Text_Size();
-

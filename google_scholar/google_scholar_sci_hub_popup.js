@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Google scholar sci-hub popup 
 // @namespace    wang19891218
-// @version      0.42
+// @version      0.43
 // @description  Save some time with sci-hub
 // @author       coco
 // @include      https://ascelibrary.org/doi/pdf*
