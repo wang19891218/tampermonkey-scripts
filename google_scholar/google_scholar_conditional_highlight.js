@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Google scholar conditional highlight
 // @namespace    wang19891218
-// @version      0.3
+// @version      0.32
 // @description  Save some time
 // @author       coco
 // @match        https://scholar.google.com/scholar*
@@ -16,7 +16,7 @@ function FunctionHighlightCitation(){
     // Highlight citation
     var List_Class = document.getElementsByClassName("gs_fl");
     var var_h_coord = window.innerWidth - 220
-    div_Control.style.left = var_h_coord+"px"
+    // div_Control.style.left = var_h_coord+"px"
     var Int_Threshold_Value_Cite=div_Input_Cite.value
     for (var i_Class = 0; i_Class < List_Class.length; i_Class++){
         List_a_Tag = List_Class[i_Class].getElementsByTagName("a");
@@ -102,17 +102,18 @@ var Value_Citation_Number;
 
 
 var div_Control = document.createElement("div");
-var var_v_coord = 180
+var var_v_coord = 120
 var var_h_coord = window.innerWidth - 220
 div_Control.style.position = "fixed";
-div_Control.style.left = var_h_coord+"px"
-div_Control.style.position = "absolute"
+// div_Control.style.left = var_h_coord+"px"
+// div_Control.style.position = "absolute"
 div_Control.style.top = var_v_coord+"px"
+div_Control.style.right = "20px"
+// div_Control.style.top = "0"
 div_Control.style.width = "200px";
 div_Control.style.height = "120px";
 div_Control.style.background = "rgba(255, 0, 0, 0.3)";
 // div_Control.style.color = "white";
-
 div_Control.style.border = "solid"
 div_Control.style.padding = "12px";
 div_Control.id = "id_coco_scholar_control"
@@ -176,12 +177,14 @@ document.cookie = "Input_Year_Threshold=" + div_Input_Year.value
 window.addEventListener("resize", FunctionHighlightCitation);
 
 var ButtonHighLight = document.createElement("button");
-ButtonHighLight.className  = "btn"
+ButtonHighLight.className = "btn"
+ButtonHighLight.style.margin = "5px"
+console.log(ButtonHighLight.style.padding)
 ButtonHighLight.textContent = "highlight"
 ButtonHighLight.onclick = function(){
-    FunctionHighlightCitation(); 
-    Function_Highlight_Year(
-    FunctionAddAverageCitation();)
+FunctionHighlightCitation(); 
+Function_Highlight_Year();
+FunctionAddAverageCitation();
 }
 
 div_Control.appendChild(div_Input_Cite_Title)
