@@ -11,8 +11,6 @@
 
 (function() {
     'use strict';
-
-     // Your code here...
     window.addEventListener('load', function_fit_to_width, false);
 })();
 
