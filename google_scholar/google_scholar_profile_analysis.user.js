@@ -106,7 +106,10 @@ function addInfoContainer() {
 
     var paragraphNames = document.createElement("p")
     paragraphNames.id = "paragraphNames"
+<<<<<<< HEAD
     paragraphNames.className = "gsc_rsb_m_title"
+=======
+>>>>>>> 4ff8ed09bf65526a339fe93f4c7ae8d322b08e2e
     containerNames.appendChild(paragraphNames)
 
     var containerKeywaords = document.createElement("div");
@@ -115,7 +118,10 @@ function addInfoContainer() {
 
     var paragraphKeywords = document.createElement("p");
     paragraphKeywords.id = "paragraphKeywords";
+<<<<<<< HEAD
     paragraphKeywords.className = "gsc_rsb_m_title"
+=======
+>>>>>>> 4ff8ed09bf65526a339fe93f4c7ae8d322b08e2e
     containerKeywaords.appendChild(paragraphKeywords);
 
 }
