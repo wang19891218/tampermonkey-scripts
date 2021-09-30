@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Google scholar profile analysis
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.5
 // @description  Google scholar profile analysis plugin
 // @author       Haifeng Wang
 // @include      /^https://scholar.google.com/citations.*user=.*/
@@ -45,19 +45,10 @@ function get_coauthors_rate() {
         temp_output = temp_output.concat("; ");
         // console.log(array_authors[i_author].name, array_authors[i_author].count);
     }
-
-    //for (i_word = 0; i_word < array_words.length; i_word++){
-    //    if (array_words[i_word].count > 1) {
-    //        // process.stdout.write(array_words[i_word].name, array_words[i_word].count);
-    //       temp_output = temp_output.concat(array_words[i_word].name);
-    //        temp_output = temp_output.concat(": ");
-    //        temp_output = temp_output.concat(array_words[i_word].count.toString());
-    //        temp_output = temp_output.concat(" ;");
-    //        //console.log(array_words[i_word].name, array_words[i_word].count);
-    //    }
-    // }
     console.log("Name count")
     console.log(temp_output);
+    var paragraphNames = document.getElementById("paragraphNames");
+    paragraphNames.innerText = temp_output;
 }
 
 function get_word_rate() {
@@ -90,17 +81,49 @@ function get_word_rate() {
             temp_output = temp_output.concat(array_words[i_word].name);
             temp_output = temp_output.concat(": ");
             temp_output = temp_output.concat(array_words[i_word].count.toString());
-            temp_output = temp_output.concat("; ");
+            temp_output = temp_output.concat(";");
             //console.log(array_words[i_word].name, array_words[i_word].count);
         }
     }
     console.log("keyword count")
     console.log(temp_output);
+    // temp_output.replace("; ", "; \br")
+    var paragraphKeywords = document.getElementById("paragraphKeywords");
+    paragraphKeywords.innerText = temp_output;
+}
+
+
+function addInfoContainer() {
+    var containerSideBar = document.getElementsByClassName("gsc_rsb")[0];
+    var containerInformation = document.createElement("div");
+    containerInformation.id = "containerInformation";
+    containerInformation.className = "gsc_rsb_s gsc_prf_pnl";
+    containerSideBar.appendChild(containerInformation);
+
+    var containerNames = document.createElement("div");
+    containerNames.id = "containerNames";
+    containerSideBar.appendChild(containerNames);
+
+    var paragraphNames = document.createElement("p")
+    paragraphNames.id = "paragraphNames"
+    paragraphNames.className = "gsc_rsb_m_title"
+    containerNames.appendChild(paragraphNames)
+
+    var containerKeywaords = document.createElement("div");
+    containerKeywaords.id = "containerKeywords";
+    containerSideBar.appendChild(containerKeywaords);
+
+    var paragraphKeywords = document.createElement("p");
+    paragraphKeywords.id = "paragraphKeywords";
+    paragraphKeywords.className = "gsc_rsb_m_title"
+    containerKeywaords.appendChild(paragraphKeywords);
+
 }
 
 (function() {
     'use strict';
     // Print author name count
+    addInfoContainer();
 
     get_coauthors_rate();
     // Pring word count
