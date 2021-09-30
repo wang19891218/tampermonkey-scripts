@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Google scholar profile analysis
 // @namespace    http://tampermonkey.net/
-// @version      0.5
+// @version      0.5.1
 // @description  Google scholar profile analysis plugin
 // @author       Haifeng Wang
 // @include      /^https://scholar.google.com/citations.*user=.*/
