@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Google scholar conditional highlight
 // @namespace    wang19891218
-// @version      0.32
+// @version      0.33
 // @description  Save some time
 // @author       coco
 // @match        https://scholar.google.com/scholar*
@@ -93,6 +93,7 @@ function FunctionAddAverageCitation() {
     return true
 }
 
+var gs_bdy_sb_in = document.getElementById("gs_bdy_sb_in")
 
 var Str_search_Text = "Cited";
 var List_Found = [];
@@ -102,23 +103,28 @@ var Value_Citation_Number;
 
 
 var div_Control = document.createElement("div");
+
+gs_bdy_sb_in.appendChild(div_Control)
+
 var var_v_coord = 120
 var var_h_coord = window.innerWidth - 220
-div_Control.style.position = "fixed";
+// div_Control.style.position = "fixed";
 // div_Control.style.left = var_h_coord+"px"
 // div_Control.style.position = "absolute"
-div_Control.style.top = var_v_coord+"px"
-div_Control.style.right = "20px"
 // div_Control.style.top = "0"
-div_Control.style.width = "200px";
-div_Control.style.height = "120px";
-div_Control.style.background = "rgba(255, 0, 0, 0.3)";
+
+// div_Control.style.top = var_v_coord+"px"
+// div_Control.style.right = "20px"
+// div_Control.style.width = "200px";
+// div_Control.style.height = "120px";
+// div_Control.style.background = "rgba(255, 0, 0, 0.3)";
 // div_Control.style.color = "white";
-div_Control.style.border = "solid"
-div_Control.style.padding = "12px";
+// div_Control.style.border = "solid"
+// div_Control.style.padding = "12px";
 div_Control.id = "id_coco_scholar_control"
-div_Control.className = "input-group"
+// div_Control.className = "input-group"
 // div_Control.innerHTML = "Control";
+div_Control.className = "gs_bdy_sb_sec"
 
 
 var decodedCookie = decodeURIComponent(document.cookie);
@@ -145,11 +151,14 @@ div_Input_Cite_Title.style.width = "200px"
 div_Input_Cite_Title.style.height = "20px"
 div_Input_Cite_Title.style.float = "left"
 
+
 var div_Input_Cite = document.createElement("INPUT");
 div_Input_Cite.setAttribute("type", "text");
 div_Input_Cite.name= "name"
 div_Input_Cite.style.float = "left"
 div_Input_Cite.className ="column"
+div_Input_Cite.style.width = "60px"
+
 div_Input_Cite.id = "id_coco_scholar_control_input_cite_number"
 div_Input_Cite.value=parseInt(getCookie("Input_Cite_Value"));
 if (isNaN(div_Input_Cite.value)) div_Input_Cite.value = 2000;
@@ -162,7 +171,7 @@ div_Input_Year_Title.class="column"
 div_Input_Year_Title.style.width = "200px"
 div_Input_Year_Title.style.height = "20px"
 div_Input_Year_Title.style.float = "left"
- 
+
 var div_Input_Year = document.createElement("INPUT");
 div_Input_Year.setAttribute("type", "text");
 div_Input_Year.name= "name"
@@ -173,6 +182,7 @@ div_Input_Year.value=parseInt(getCookie("Input_Year_Threshold"));
 if (isNaN(div_Input_Year.value)) div_Input_Year.value = 2000;
 document.cookie = "Input_Year_Threshold=" + div_Input_Year.value
 // div_Input_Year.onchange = function(){Function_Highlight_Year()}
+div_Input_Year.style.width = "60px"
 
 window.addEventListener("resize", FunctionHighlightCitation);
 
@@ -193,18 +203,9 @@ div_Control.appendChild(div_Input_Year_Title)
 div_Control.appendChild(div_Input_Year)
 div_Control.appendChild(ButtonHighLight)
 
-document.getElementsByTagName("body")[0].appendChild(div_Control)
+// document.getElementsByTagName("body")[0].appendChild(div_Control)
 
 
 FunctionHighlightCitation()
 Function_Highlight_Year()
 FunctionAddAverageCitation()
- 
- 
-// Element property hidden
-// height: 0px;
-// visibility: hidden;
-// border: 0px;
-// padding: {'padding-top':0px;};
-// padding-top: 0px;
-// padding-bottom: 0px;
