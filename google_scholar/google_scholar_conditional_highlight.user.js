@@ -13,7 +13,6 @@
 // ==/UserScript==
 
 
-
 function FunctionHighlightCitation(){
     // Highlight citation
     var List_Class = document.getElementsByClassName("gs_fl");
