@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Google scholar conditional highlight
 // @namespace    wang19891218
-// @version      0.33
+// @version      0.35
 // @description  Save some time
 // @author       coco
 // @updateURL    https://github.com/wang19891218/tampermonkey-scripts/raw/master/google_scholar/google_scholar_conditional_highlight.user.js
