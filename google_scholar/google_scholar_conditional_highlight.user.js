@@ -4,6 +4,8 @@
 // @version      0.33
 // @description  Save some time
 // @author       coco
+// @updateURL    https://github.com/wang19891218/tampermonkey-scripts/raw/master/google_scholar/google_scholar_conditional_highlight.user.js
+// @downloadURL  https://github.com/wang19891218/tampermonkey-scripts/raw/master/google_scholar/google_scholar_conditional_highlight.user.js
 // @match        https://scholar.google.com/scholar*
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
