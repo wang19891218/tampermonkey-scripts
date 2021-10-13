@@ -4,6 +4,8 @@
 // @version      0.5.1
 // @description  Google scholar profile analysis plugin
 // @author       Haifeng Wang
+// @updateURL    https://github.com/wang19891218/tampermonkey-scripts/raw/master/google_scholar/google_scholar_profile_analysis.user.js
+// @downloadURL  https://github.com/wang19891218/tampermonkey-scripts/raw/master/google_scholar/google_scholar_profile_analysis.user.js
 // @include      /^https://scholar.google.com/citations.*user=.*/
 // @grant        none
 // ==/UserScript==

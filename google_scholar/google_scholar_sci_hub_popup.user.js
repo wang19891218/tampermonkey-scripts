@@ -4,6 +4,8 @@
 // @version      0.48
 // @description  Save some time with sci-hub
 // @author       coco
+// @updateURL    https://github.com/wang19891218/tampermonkey-scripts/raw/master/google_scholar/google_scholar_sci_hub_popup.user.js
+// @downloadURL  https://github.com/wang19891218/tampermonkey-scripts/raw/master/google_scholar/google_scholar_sci_hub_popup.user.js
 // @require      https://code.jquery.com/jquery-3.6.0.slim.min.js
 
 // @include      https://ascelibrary.org/doi/pdf*
