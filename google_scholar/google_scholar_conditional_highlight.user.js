@@ -34,17 +34,19 @@ function FunctionModifyItems() {
 
         // Add citation per year to the item
         var textAvgCitation = aCitationNumer.cloneNode()
-        textAvgCitation.textContent = ", " + floatAverageCitation.toFixed(2).toString() + ' per year'
-        textAvgCitation.style = ''
-        arrayA[2].parentNode.insertBefore(textAvgCitation, aCitationNumer.nextSibling);
+        if (arrayA[3].textContent.indexOf("year") !== -1) {
 
+        }else{
+            textAvgCitation.textContent = ", " + floatAverageCitation.toFixed(2).toString() + ' per year'
+            textAvgCitation.style = ''
+            arrayA[2].parentNode.insertBefore(textAvgCitation, aCitationNumer.nextSibling);
+        }
         // Highlight year
-        console.log("year highlighted")
         var strStyle = "background-color:powderblue;display: inline-block; border: 2px dashed black; padding: 0.03em 0.05em;"
+        Div_gs_a.innerHTML = Div_gs_a.innerHTML.replace(strStyle,'');
         if (floatPublichYear >= div_Input_Year.value) {
             Div_gs_a.innerHTML = Div_gs_a.innerHTML.replace(Str_Year,'<b style=\"' + strStyle + '\">' + Str_Year + '</b>');
         } else {
-            Div_gs_a.innerHTML = Div_gs_a.innerHTML.replace(strStyle,'');
         }
 
         // Highlight citation
