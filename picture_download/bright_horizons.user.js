@@ -6,6 +6,8 @@
 // @author       wang19891218
 // @match        https://mybrightday.brighthorizons.com/m/p/*
 // @match        https://mybrightday.brighthorizons.com/m/v/*
+// @downloadURL  https://github.com/wang19891218/tampermonkey-scripts/raw/master/picture_download/bright_horizons.user.js
+// @updateURL    https://github.com/wang19891218/tampermonkey-scripts/raw/master/picture_download/bright_horizons.user.js
 // @icon         https://www.google.com/s2/favicons?domain=brighthorizons.com
 // @grant        none
 // ==/UserScript==
@@ -14,7 +16,7 @@
     'use strict';
     if (document.title.includes("Link Expired") ) {
         var listA = [].slice.call(document.getElementsByTagName("a"))
-        if (listA[0].textContent.includes("clice here")) {
+        if (listA[0].textContent.includes("click here")) {
             listA[0].click()
         }
     } else {
