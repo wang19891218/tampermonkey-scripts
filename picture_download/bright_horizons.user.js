@@ -14,7 +14,7 @@
     'use strict';
     if (document.title.includes("Link Expired") ) {
         var listA = [].slice.call(document.getElementsByTagName("a"))
-        if (listA[0].textContent.includes("clice here")) {
+        if (listA[0].textContent.includes("click here")) {
             listA[0].click()
         }
     } else {
