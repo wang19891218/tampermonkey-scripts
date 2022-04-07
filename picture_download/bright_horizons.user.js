@@ -1,18 +1,38 @@
 // ==UserScript==
 // @name         download bright horizon pictures
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.3
 // @description  use on your own risk
 // @author       wang19891218
-// @match        https://mybrightday.brighthorizons.com/m/p/*
-// @match        https://mybrightday.brighthorizons.com/m/v/*
-// @downloadURL  https://github.com/wang19891218/tampermonkey-scripts/raw/master/picture_download/bright_horizons.user.js
-// @updateURL    https://github.com/wang19891218/tampermonkey-scripts/raw/master/picture_download/bright_horizons.user.js
+// @match        https://productionmbd.brighthorizons.com/m/snapshot/*
+// @match        https://productionmbd.brighthorizons.com/m/p/*
+// @match        https://productionmbd.brighthorizons.com/m/v/*
+// @match        https://productionmbd.brighthorizons.com/m/observation/*
 // @icon         https://www.google.com/s2/favicons?domain=brighthorizons.com
 // @grant        none
 // ==/UserScript==
 
-(function() {
+// TODO
+// * Add the date of uuid to file name
+
+function get_time_int(uuid_str) {
+    var uuid_arr = uuid_str.split( '-' ),
+        time_str = [
+            uuid_arr[ 2 ].substring( 1 ),
+            uuid_arr[ 1 ],
+            uuid_arr[ 0 ]
+        ].join( '' );
+    return parseInt( time_str, 16 );
+};
+
+function get_date_obj(uuid_str) {
+    var int_time = get_time_int( uuid_str ) - 122192928000000000,
+        int_millisec = Math.floor( int_time / 10000 );
+    return new Date( int_millisec );
+};
+
+
+function saveFigure() {
     'use strict';
     if (document.title.includes("Link Expired") ) {
         var listA = [].slice.call(document.getElementsByTagName("a"))
@@ -22,8 +42,20 @@
     } else {
         // Get URL
         console.log(window.location.href)
-        var url = window.location.href + "?d=t"
-        console.log(url)
+        let endString = "?d=t&thumbnail=true"
+        if (document.location.href.endsWith(endString)) {
+            var url = window.location.href.substring(
+                0, window.location.href.length - endString.length)
+        }
+        let uuid = url.substring(url.lastIndexOf("/") + 1)
+        console.log(uuid)
+        let date = get_date_obj(uuid)
+        console.log(date)
+        console.log(date.getFullYear().toString())
+        console.log(date.getMonth().toString())
+        console.log(date.getDate().toString())
+        url = url + "?d=t"
+        // console.log(url)
         // Get current date var today = new Date();
         var today = new Date();
         var dd = String(today.getDate()).padStart(2, '0');
@@ -41,4 +73,6 @@
         document.body.removeChild(a)
         window.close();
     }
-})();
+}
+
+saveFigure()
