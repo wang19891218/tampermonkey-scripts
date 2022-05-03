@@ -5,7 +5,7 @@
 // @description  use on your own risk
 // @author       wang19891218
 // @updateURL    https://github.com/wang19891218/tampermonkey-scripts/raw/master/picture_download/bright_horizons.user.js
-// @downloadURL    https://github.com/wang19891218/tampermonkey-scripts/raw/master/picture_download/bright_horizons.user.js
+// @downloadURL  https://github.com/wang19891218/tampermonkey-scripts/raw/master/picture_download/bright_horizons.user.js
 // @match        https://productionmbd.brighthorizons.com/m/snapshot/*
 // @match        https://productionmbd.brighthorizons.com/m/p/*
 // @match        https://productionmbd.brighthorizons.com/m/v/*
@@ -13,7 +13,6 @@
 // @icon         https://www.google.com/s2/favicons?domain=brighthorizons.com
 // @grant        none
 // ==/UserScript==
-
 // TODO
 // * Add the date of uuid to file name
 
