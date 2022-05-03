@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         download bright horizon pictures
 // @namespace    http://tampermonkey.net/
-// @version      0.3.1
+// @version      0.4
 // @description  use on your own risk
 // @author       wang19891218
 // @match        https://productionmbd.brighthorizons.com/m/snapshot/*
