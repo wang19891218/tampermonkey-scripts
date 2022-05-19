@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         NIST UWO dataset display modifier
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.2.1
 // @description  NIST UWO aerodynamics display enhancement 
 // @author       wang19891218
 // @updateURL    https://github.com/wang19891218/tampermonkey-scripts/raw/master/google_scholar/NIST_aerodynamics_database_UWO_display_modify.user.js
@@ -15,12 +15,12 @@
 function functionRunModifier() {
     'use strict';
     // Your code here...
-    console.log("Working");
+    // console.log("Working");
     var elementTable = document.getElementsByClassName("table-wrapper")[0];
     elementTable.style.overflow = "visible";
-    console.log(elementTable.style.overflow)
+    // console.log(elementTable.style.overflow)
     var elementTableOverflow = document.getElementsByClassName("table-overflow")[0];
-    console.log(elementTableOverflow);
+    // console.log(elementTableOverflow);
     elementTableOverflow.parentElement.removeChild(elementTableOverflow);
 }
 
