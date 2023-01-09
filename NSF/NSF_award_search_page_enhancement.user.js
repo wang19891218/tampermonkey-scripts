@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         NSF award display enhancement
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  NSF award display enhancement: larger font
 // @author       wang19891218 
 // @match        https://www.nsf.gov/awardsearch/showAward*
