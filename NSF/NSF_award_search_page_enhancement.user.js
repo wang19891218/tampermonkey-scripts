@@ -5,6 +5,7 @@
 // @description  NSF award display enhancement: larger font
 // @author       wang19891218 
 // @match        https://www.nsf.gov/awardsearch/showAward*
+// @match        https://nsf.gov/awardsearch/showAward*
 // @grant        none
 // ==/UserScript==
 
